@@ -861,6 +861,7 @@ class BottomNavigation<T: *> extends React.Component<Props<T>, State> {
                               <AnimatedText
                                 style={[
                                   styles.label,
+                                  this.props.labelStyle,
                                   { color: activeTintColor },
                                 ]}
                               >
@@ -885,6 +886,7 @@ class BottomNavigation<T: *> extends React.Component<Props<T>, State> {
                                 <AnimatedText
                                   style={[
                                     styles.label,
+                                    this.props.labelStyle,
                                     { color: inactiveTintColor },
                                   ]}
                                 >
