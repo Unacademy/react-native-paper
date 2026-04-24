@@ -7,6 +7,7 @@ import {
   StyleProp,
   StyleSheet,
   Pressable,
+  TextStyle,
   View,
   ViewStyle,
 } from 'react-native';
@@ -203,6 +204,10 @@ export type Props<Route extends BaseRoute> = {
   style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
   activeIndicatorStyle?: StyleProp<ViewStyle>;
   /**
+   * Style to apply to the tab label text.
+   */
+  labelStyle?: StyleProp<TextStyle>;
+  /**
    * @optional
    */
   theme?: ThemeProp;
@@ -330,6 +335,7 @@ const BottomNavigationBar = <Route extends BaseRoute>({
   keyboardHidesNavigationBar = Platform.OS === 'android',
   style,
   activeIndicatorStyle,
+  labelStyle,
   labeled = true,
   animationEasing,
   onTabPress,
@@ -853,6 +859,7 @@ const BottomNavigationBar = <Route extends BaseRoute>({
                                 color: activeLabelColor,
                                 ...font,
                               },
+                              labelStyle,
                             ]}
                           >
                             {getLabelText({ route })}
@@ -887,6 +894,7 @@ const BottomNavigationBar = <Route extends BaseRoute>({
                                   color: inactiveLabelColor,
                                   ...font,
                                 },
+                                labelStyle,
                               ]}
                             >
                               {getLabelText({ route })}

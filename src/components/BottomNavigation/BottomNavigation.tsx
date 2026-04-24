@@ -6,6 +6,7 @@ import {
   Platform,
   StyleProp,
   StyleSheet,
+  TextStyle,
   View,
   ViewStyle,
 } from 'react-native';
@@ -256,6 +257,10 @@ export type Props<Route extends BaseRoute> = {
   style?: StyleProp<ViewStyle>;
   activeIndicatorStyle?: StyleProp<ViewStyle>;
   /**
+   * Style to apply to the tab label text.
+   */
+  labelStyle?: StyleProp<TextStyle>;
+  /**
    * @optional
    */
   theme?: ThemeProp;
@@ -337,6 +342,7 @@ const BottomNavigation = <Route extends BaseRoute>({
   labeled = true,
   style,
   activeIndicatorStyle,
+  labelStyle,
   sceneAnimationEnabled = false,
   sceneAnimationType = 'opacity',
   sceneAnimationEasing,
@@ -587,6 +593,7 @@ const BottomNavigation = <Route extends BaseRoute>({
         keyboardHidesNavigationBar={keyboardHidesNavigationBar}
         style={barStyle}
         activeIndicatorStyle={activeIndicatorStyle}
+        labelStyle={labelStyle}
         labeled={labeled}
         animationEasing={sceneAnimationEasing}
         onTabPress={handleTabPress}
